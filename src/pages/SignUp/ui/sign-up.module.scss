@@ -71,8 +71,8 @@
   }
 
   &__link {
-    color: var(--color-primary);
     @include mixins.reset-link;
+    color: var(--color-primary);
 
     @include media.hover {
       text-decoration: underline;
