@@ -146,7 +146,7 @@ export function ArticleDetails({ article }: Props) {
         <time className={css.article__date} dateTime={updatedAt}>
           Updated: {formatDate(updatedAt)}
         </time>
-        {body && <Markdown>{body}</Markdown>}
+        {body && <Markdown>{normalizeText(body)}</Markdown>}
       </section>
     </article>
   )
