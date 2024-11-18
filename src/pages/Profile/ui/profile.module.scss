@@ -1,0 +1,13 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.form {
+  &__group {
+    margin-top: 32px;
+  }
+
+  &__button {
+    margin-top: 20px;
+    width: 100%;
+  }
+}

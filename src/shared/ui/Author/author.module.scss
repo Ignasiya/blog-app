@@ -1,0 +1,40 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.user {
+  height: 50px;
+  min-width: 180px;
+
+  @include media.mobile {
+    align-self: flex-end;
+    order: -1;
+  }
+
+  &__name {
+    color: var(--color-font);
+    font-size: 18px;
+    line-height: 28px;
+    margin-block: 0;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__avatar {
+    @include mixins.square(46px);
+    object-fit: cover;
+    float: right;
+    margin-left: 12px;
+    border-radius: 50%;
+  }
+
+  &__date {
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    line-height: 22px;
+    margin-block: 0;
+    text-align: right;
+  }
+}

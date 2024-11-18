@@ -1,0 +1,99 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.button {
+  @include mixins.reset-btn;
+  @include mixins.flex-centered;
+  @include mixins.outline;
+  padding: 8px 20px;
+  user-select: none;
+  border-radius: var(--border-radius);
+  color: var(--color-font);
+
+  @include media.hover {
+    &:not([disabled]) {
+      color: var(--color-focus);
+    }
+  }
+
+  &[data-theme='filled'] {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 4px;
+    border: none;
+
+    @include media.hover {
+      &:not([disabled]) {
+        background-color: #0056b3;
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &[data-theme='outline'][data-color='blue'] {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius);
+
+    @include media.hover {
+      &:not([disabled]) {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &[data-theme='outline'][data-color='red'] {
+    background-color: transparent;
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+    border-radius: var(--border-radius);
+
+    @include media.hover {
+      &:not([disabled]) {
+        background-color: var(--color-red);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &[data-theme='outline'][data-color='green'] {
+    background-color: transparent;
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    border-radius: var(--border-radius);
+
+    @include media.hover {
+      &:not([disabled]) {
+        background-color: var(--color-green);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &[data-theme='outline'][data-color='gray'] {
+    background-color: transparent;
+    color: var(--color-gray);
+    border: 1px solid var(--color-gray);
+    border-radius: var(--border-radius);
+
+    @include media.hover {
+      &:not([disabled]) {
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #999;
+    background-color: #ccc;
+    opacity: 0.7;
+  }
+
+  &--icon {
+    padding: 6px;
+  }
+}

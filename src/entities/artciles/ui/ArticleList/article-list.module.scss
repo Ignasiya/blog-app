@@ -1,0 +1,25 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: var(--container-width);
+  @include mixins.reset-list;
+  margin: 0 auto;
+
+  &__item {
+    width: 100%;
+    display: block;
+    transition: translate 0.3s ease-in-out;
+    @include mixins.outline;
+    @include mixins.reset-link;
+
+    @include media.hover {
+      border-radius: var(--border-radius);
+      translate: 0 -2px;
+      box-shadow: 0 3px 10px 0 var(--color-primary);
+    }
+  }
+}

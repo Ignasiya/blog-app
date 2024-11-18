@@ -1,0 +1,86 @@
+@use '@/app/styles/mixins';
+
+.container {
+  @include mixins.flex-centered;
+  padding: 8px;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-gradient-prim), var(--color-gradient-alt));
+  color: #ffffff;
+  text-align: center;
+}
+
+.title {
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.message {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #cce7ff;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0074d9;
+}
+
+.animation {
+  position: relative;
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.small {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 20%;
+  left: 10%;
+}
+
+.medium {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.4);
+  top: 50%;
+  left: 60%;
+}
+
+.large {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  top: 10%;
+  left: 40%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

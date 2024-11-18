@@ -1,0 +1,81 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.form {
+  &__group {
+    margin-top: 32px;
+  }
+
+  &__terms {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    column-gap: 8px;
+    margin-bottom: 20px;
+    color: rgb(89, 89, 89);
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 26px;
+    user-select: none;
+  }
+
+  &__checkbox {
+    position: absolute;
+    appearance: none;
+    margin: 0;
+
+    &_icon {
+      position: absolute;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--color-focus);
+      border-radius: 2px;
+      margin-left: -26px;
+
+      &_invalid {
+        border-color: var(--color-red);
+      }
+    }
+
+    &:checked + &_icon {
+      background-color: var(--color-primary);
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Shape' d='M4.28 8L0 4.16L1.2 3.07L4.28 5.82L10.79 0L12 1.09L4.28 8Z' fill='%23FFFFFF' fill-opacity='1' fill-rule='nonzero'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &:focus + &_icon {
+      border: 1px solid var(--color-primary);
+      box-shadow: 0px 0px 4px 0px #2194f233;
+    }
+  }
+
+  &__divider {
+    border: none;
+    height: 1px;
+    margin-top: 20px;
+    background-color: rgb(232, 232, 232);
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__text {
+    color: var(--color-gray);
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  &__link {
+    color: var(--color-primary);
+    @include mixins.reset-link;
+
+    @include media.hover {
+      text-decoration: underline;
+    }
+  }
+}

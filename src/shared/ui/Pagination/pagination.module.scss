@@ -1,0 +1,36 @@
+@use '@/app/styles/mixins';
+@use '@/app/styles/media';
+
+.pagination {
+  @include mixins.reset-list;
+  @include mixins.flex-centered;
+  gap: 4px;
+
+  &__button {
+    @include mixins.reset-btn;
+    border-radius: 4px;
+    padding: 6px 8px;
+    @include mixins.outline;
+
+    @include media.hover {
+      &:not([aria-current='page']) {
+        background-color: var(--color-focus);
+      }
+    }
+
+    &:disabled[aria-current='page'] {
+      cursor: not-allowed;
+    }
+
+    &:disabled:not([aria-current='page']) {
+      cursor: not-allowed;
+      color: #999;
+      opacity: 0.7;
+    }
+  }
+}
+
+.active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
